@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-1: #115e59;
+    --color-2: #4ade80;
+    --color-3: #a7f3d0;
+    --color-4: rgb(168, 199, 168);
+    --color-5: rgb(232, 247, 224);
+    --color-6: rgb(227, 245, 245);
+    --color-7: rgb(40, 129, 150);
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    'nav header'
+    'nav main';
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* HEADER */ 
+header{
+    grid-area: header;
+    background-color: var(--color-3);
+    box-shadow: 0 1px 25px 1px rgb(70, 69, 69);
+    z-index: 3;
+}
+
+/* TOP */
+header .top{
+    display: grid;  
+    grid-template-columns: 1fr 1fr;
+    padding: 1% 3%;
+}
+header .top .search{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header .top .search input{
+    border: none;
+    outline: 0;
+    padding: 1% 3%;
+    border-radius: 5vw;
+    font-size: 1.5vw;
+    width: 80%;
+    background-color: var(--color-4);
+}
+header .top .account{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+header .top .search-svg, .bell-svg{
+    width: 2.5vw;
+}
+header .top .profile-img{
+    width: 4.5vw;
+    border-radius: 50%;
+}
+header .top span{
+    text-decoration: wavy underline;
+    font-size: 1.3rem;
+}
+
+/* BOTTOM */
+header .bottom{
+    display: grid;  
+    grid-template-columns: 1fr 1fr;
+    padding: 1% 3%;
+}
+header .bottom .profile{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3%;
+}
+header .bottom .profile img{
+    width: 6vw;
+    border-radius: 50%;
+}
+header .bottom .profile img:hover{
+    scale: 1.1;
+}
+header .bottom .profile p{
+    font-size: 1.4rem;
+}
+header .bottom .profile p span{
+    font-weight: 600;
+}
+header .bottom .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8%;
+}
+header .bottom .buttons button{
+    border-radius: 3vw;
+    width: 8rem;
+    padding: 2% 1%;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--color-1);
+    color: var(--color-5);
+    border: none;
+}
+header .bottom .buttons button:hover{
+    scale: 0.9;
+    background-color: var(--color-3);
+    color: var(--color-1);
+    font-weight: 600;
+    border: 0.1vw solid var(--color-1);
+}
+
+/* NAV */
+nav{
+    background-color: var(--color-1);
+    grid-area: nav;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8%;
+    padding: 1%;
+}
+nav .padding-left-class{
+    padding-left: 10%;
+}
+nav img{
+    height: 5vh;
+}
+nav .top{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    border-bottom: 1px solid black;
+}
+nav .top img{
+    height: 8vh;
+}
+
+nav .middle, nav .bottom{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 2vh;
+    font-size: 1.4rem;
+}
+
+nav .middle span:hover, nav .bottom span:hover{
+    cursor: pointer;
+    color: var(--color-5);
+}
+
+/* MAIN */
+main{
+    background-color: var(--color-2);
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    overflow-y: scroll;
+    height: auto;
+    padding-bottom: 20%;
+}
+
+main .projects{
+    padding: 3%;
+}
+main .projects .title{
+    font-size: 1.3rem;
+    margin: 2% 0;
+    font-weight: 1000;
+}
+main .projects .card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3%;
+}
+main .projects .card-container .card{
+    background-color: var(--color-6);
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    border-radius: 1vw;
+    border-left: 1.5vh solid var(--color-7);
+
+}
+main .projects .card-container .card p{
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+main .projects .card-container .card span{
+    font-size: 0.9rem;
+}
+main .projects .card-container .card div{
+    align-self: flex-end;
+}
+main .projects .card-container .card div img{
+    height: 6vh;
+}
+main .content{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+}
+
+main .content p{
+    font-size: 1.1rem;
+}
+
+main .content .announcements{
+    padding: 5%;
+    margin: 2% 0;
+}
+main .content .announcements > p, main .content .trending > p{
+    font-weight: 600; 
+    font-size: 1.2rem;
+}
+main .content .container{
+    border-radius: 1vw;
+    background-color: var(--color-6);
+    font-size: 0.8rem;
+    padding: 5% 7%;
+    width: 90%;
+    height: auto;
+}
+main .content article .text{
+    border-bottom: 1px solid gray;
+    padding: 5%;
+}
+main .content article .last{
+    border: none;
+}
+
+main .content .trending{
+    padding: 5%;
+    margin: 2% 0;
+    display: flex;
+    flex-direction: column;
+}
+main .content .trending .container .account{
+    display: flex;
+    gap: 5%;
+    padding: 3%;
+}
+main .content .trending .container .account .text p{
+    font-size: 1rem;
+}
+main .content .trending .container .account .text p:nth-child(1){
+    font-weight: 600;
+}
+main .content .trending .container .account img{
+    height: 4vw;
+    border-radius: 50%;
+}
+main .content .trending .container .account img:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
